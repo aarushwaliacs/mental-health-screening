@@ -1,0 +1,59 @@
+@import 'tailwindcss';
+
+/* Design tokens. Light by default; dark follows the OS setting. */
+:root {
+  color-scheme: light;
+  --bg: #f6f8f9;
+  --surface: #ffffff;
+  --surface-2: #eef2f4;
+  --border: #d5dde1;
+  --ink: #0f1c22;
+  --ink-2: #44545c;
+  --ink-3: #5f6e76;
+  --brand: #0f766e;
+  --brand-ink: #ffffff;
+  --brand-soft: #d9f0ec;
+  --focus: #1d4ed8;
+  --ok-bg: #e4f4ea; --ok-ink: #14532d;
+  --warn-bg: #fdf1d6; --warn-ink: #6b4300;
+  --danger-bg: #fde4e1; --danger-ink: #7a1710;
+  --info-bg: #e3eefb; --info-ink: #17407a;
+  /* categorical series (validated reference palette, fixed order) */
+  --series-1: #2a78d6; --series-2: #eb6834; --series-3: #1baf7a; --series-4: #eda100; --series-5: #e87ba4;
+  /* ordinal ramp for Low / Moderate / High */
+  --level-low: #86b6ef; --level-moderate: #3987e5; --level-high: #184f95;
+  --grid: #d9dfe2;
+}
+@media (prefers-color-scheme: dark) {
+  :root {
+    color-scheme: dark;
+    --bg: #0d1417; --surface: #162026; --surface-2: #1d2a31; --border: #2c3b43;
+    --ink: #eef3f5; --ink-2: #bccad0; --ink-3: #9aabb3;
+    --brand: #3cc3b4; --brand-ink: #04211e; --brand-soft: #123a37; --focus: #7aa7ff;
+    --ok-bg: #12301f; --ok-ink: #a7e3bd;
+    --warn-bg: #3a2c0b; --warn-ink: #f3d489;
+    --danger-bg: #3d1713; --danger-ink: #f5b1aa;
+    --info-bg: #14283f; --info-ink: #a9c9f5;
+    --series-1: #3987e5; --series-2: #d95926; --series-3: #199e70; --series-4: #c98500; --series-5: #d55181;
+    --level-low: #184f95; --level-moderate: #3987e5; --level-high: #9ec5f4;
+    --grid: #2c3b43;
+  }
+}
+
+html { scroll-behavior: smooth; }
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--ink);
+  font-family: 'Inter', ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
+  line-height: 1.55;
+  -webkit-font-smoothing: antialiased;
+}
+:focus-visible { outline: 3px solid var(--focus); outline-offset: 2px; border-radius: 4px; }
+h1, h2, h3 { letter-spacing: -0.01em; }
+@media (prefers-reduced-motion: reduce) { * { animation: none !important; transition: none !important; scroll-behavior: auto !important; } }
+@keyframes pulse-soft { 0%,100% { opacity: 1 } 50% { opacity: .5 } }
+.skeleton { background: var(--surface-2); border-radius: 8px; animation: pulse-soft 1.4s ease-in-out infinite; }
+
+main { overflow-wrap: anywhere; }
+main > * , main .grid > * { min-width: 0; }

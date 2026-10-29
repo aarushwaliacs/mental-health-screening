@@ -1,0 +1,9 @@
+.venv/
+__pycache__/
+.pytest_cache/
+node_modules/
+frontend/dist/
+.env
+# private datasets and fitted models stay out of public repos
+data/
+artifacts/

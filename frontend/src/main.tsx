@@ -267,7 +267,7 @@ export interface Job {
 }
 
 // -------- services/api.ts --------
-const API_BASE: string = (import.meta.env.VITE_API_BASE_URL as string | undefined) ?? '/api'
+const API_BASE: string = (import.meta.env.VITE_API_BASE_URL as string | undefined) ?? 'https://mental-health-screening-0no0.onrender.com/api'
 
 class ApiError extends Error {
   status: number
